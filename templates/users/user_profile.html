@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block title %}{{ profile_user.username }} | Bumpr{% endblock %}
+{% load static %}
+{% block content %}
+    <div class="container text-center">
+        <div class="jumbotron jumbotron-fluid">
+            <h1>{{ profile_user.username }}</h1>
+
+            <p>{{ profile_user.profile.bio }}</p>
+            {% if profile_user.username == user.username %}
+                <a href="{% url 'user_profile_edit' userstring=user.username %}">Edit Profile</a>
+            {% endif %}
+            {#            <p>{{ profile_user.profile.location }}</p>#}
+        </div>
+        <div>
+            <br><br><br><br><br>
+        </div>
+    </div>
+
+{% endblock %}
