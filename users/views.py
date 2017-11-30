@@ -64,3 +64,17 @@ def user_profile(request, userstring):
     profile_user_plates = []
     return render(request, 'users/user_profile.html',
                   {'user': uid, 'profile_user': profile_user})
+
+
+@login_required
+def user_profile_edit(request, userstring):
+    if request.user.username != userstring:
+        uid = get_object_or_404(User, username=request.user.username)
+        profile_user = get_object_or_404(User, username=userstring)
+        return render(request, 'users/user_profile.html', {'user': uid, 'profile_user': profile_user})
+    uid = get_object_or_404(User, username=request.user.username)
+    return render(request, 'users/user_profile_edit.html', {'user': uid})
+
+@login_required
+def user_settings(request):
+    return render(request, 'users/user_settings.html', {})
