@@ -75,6 +75,7 @@ def user_profile_edit(request, userstring):
     uid = get_object_or_404(User, username=request.user.username)
     return render(request, 'users/user_profile_edit.html', {'user': uid})
 
+
 @login_required
 def user_settings(request):
     return render(request, 'users/user_settings.html', {})
