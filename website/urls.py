@@ -8,4 +8,6 @@ urlpatterns = [
     # ex: /
     url(r'^$', views.index, name='index'),
 
-    ]
+    url(r'^review/', views.reviewItem),
+
+]
