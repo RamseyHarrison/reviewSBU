@@ -8,9 +8,6 @@ urlpatterns = [
     # ex: /register/
     url(r'^register/$', views.user_register, name='user_register'),
 
-    # # ex: /login/
-    # url(r'^login/$', views.user_login, name='user_login'),
-
     # ex: /accounts/...
     url(r'^accounts/', include('django.contrib.auth.urls')),
 
