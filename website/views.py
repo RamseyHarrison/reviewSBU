@@ -7,7 +7,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'homepage/index.html', {})
 
-<<<<<<< HEAD
 def reviewItem(request):
 
     context = {
@@ -16,7 +15,6 @@ def reviewItem(request):
     "outcome":"Submit"
     }
     return render(request, 'pages/review_item.html', context)
-=======
+
 def dining(request, dining_area):
     return render(request, 'dining/dining.html', {})
->>>>>>> a6d7231a669f27c33bc0d1f8ebaee008cda8810e
