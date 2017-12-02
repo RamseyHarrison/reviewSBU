@@ -10,3 +10,10 @@ class foodItem(models.Model):
     description = models.CharField(max_length=50)
 
 
+class foodItemComment(models.Model):
+    foodItem = models.ForeignKey(foodItem)
+    comment = models.CharField(max_length=500)
+    
+
+
+
